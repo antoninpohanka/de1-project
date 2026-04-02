@@ -1,4 +1,4 @@
-# de1-project
+# Stopwatch project
 Projekt do předmětu BPC-DE1
 
 Všichni pracují na všem :)
