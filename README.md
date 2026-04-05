@@ -3,9 +3,9 @@
 Tento projekt implementuje digitální stopky na desku Nexys A7-50T v jazyce VHDL. Stopky měří čas s přesností na setiny sekundy a umožňují zmrazení zobrazení (Lap) bez přerušení měření na pozadí.
 
 # Členové týmu
-**Ondrej Kollár**
-**Lukáš Kosek**
-**Antonín Pohanka**
+- **Ondrej Kollár**
+- **Lukáš Kosek**
+- **Antonín Pohanka**
 
 # Harmonogram
 1. týden
