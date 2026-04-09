@@ -93,14 +93,18 @@
   <FileSets Version="1" Minor="32">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../../Desktop/Stuff/de1/counter/counter.srcs/sources_1/new/clk_en.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/de1/counter/counter.srcs/sources_1/new/clk_en.vhd">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/Stuff/de1/counter/counter.srcs/sources_1/new/clk_en.vhd"/>
+          <Attr Name="ImportTime" Val="1775715510"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../Desktop/Stuff/de1/debounce/debounce.srcs/sources_1/new/debounce.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/de1/debounce/debounce.srcs/sources_1/new/debounce.vhd">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/Stuff/de1/debounce/debounce.srcs/sources_1/new/debounce.vhd"/>
+          <Attr Name="ImportTime" Val="1775722166"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
