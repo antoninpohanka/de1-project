@@ -35,3 +35,4 @@ Tento projekt implementuje digitální stopky na desku Nexys A7-50T v jazyce VHD
 - `btn_lap`: Tlačítko sloužící pro zobrazení času kola. V podstatě zmrazení času na displeji, přičemž na pozadí se čas přičítá dále, pokud se nezastaví. Jakmile se tlačítko zmáčkne znovu, začne se opět zobrazovat běžící čas, který se zatím přičítal "na pozadí".
 - `clk`: Hodinový vstup z desky Nexys A7-50T.
 - `ce_100hz`: Upravený časový signál sloužící k přičítání času na stopkách.
+- `(...)_d`: Ošetřené vstupy blokem debounce.
