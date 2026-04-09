@@ -1,4 +1,4 @@
-# Složky s dočasnými daty a výsledky syntézy
+# Temporary files and folders
 *.cache/
 *.hw/
 *.sim/
@@ -6,13 +6,13 @@
 *.ip_user_files/
 .Xil/
 
-# Logy
+# Logs
 *.log
 *.jou
 *.str
 *.os
 *.pb
 
-# Vygenerované binární soubory
+# Generated bit files
 *.bit
 *.bin
