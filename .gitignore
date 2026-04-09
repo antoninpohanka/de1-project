@@ -1,4 +1,4 @@
-# Složky s dočasnými daty a výsledky syntézy (Vivado je umí vytvořit znovu)
+# Složky s dočasnými daty a výsledky syntézy
 *.cache/
 *.hw/
 *.sim/
@@ -6,13 +6,13 @@
 *.ip_user_files/
 .Xil/
 
-# Logy a zbytečnosti
+# Logy
 *.log
 *.jou
 *.str
 *.os
 *.pb
 
-# Vygenerované binárky (pokud je nepotřebujete sdílet)
+# Vygenerované binární soubory
 *.bit
 *.bin
