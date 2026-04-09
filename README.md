@@ -25,5 +25,5 @@ Tento projekt implementuje digitální stopky na desku Nexys A7-50T v jazyce VHD
 
 # Blokové schéma projektu
 
-![de1_2 drawio](https://github.com/user-attachments/assets/57709f73-9061-437f-b0d0-c29b021a8672)
+![de1_2 drawio](https://github.com/user-attachments/assets/f4676e6f-cfb7-4e41-a8b1-4053d97b4f72)
 <?xml version="1.0" encoding="UTF-8"?>
