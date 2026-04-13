@@ -25,8 +25,8 @@ Tento projekt implementuje digitální stopky na desku Nexys A7-50T v jazyce VHD
 
 # Blokové schéma projektu
 
-![de1_2 drawio](https://github.com/user-attachments/assets/f4676e6f-cfb7-4e41-a8b1-4053d97b4f72)
-![Stopwatch_logic](image2.png)
+![de1_2 drawio](stopwatch_top.png)
+![Stopwatch_logic](stopwatch_logic.png)
 <?xml version="1.0" encoding="UTF-8"?>
 
 # Popis vstupů
