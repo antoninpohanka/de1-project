@@ -11,22 +11,17 @@ entity start_stop_latch is
 end start_stop_latch;
 
 architecture Behavioral of start_stop_latch is
-    signal btn_prev : STD_LOGIC := '0';
     signal running  : STD_LOGIC := '0';
+
 begin
     process(clk)
     begin
         if rising_edge(clk) then
             if btn_rst_d = '1' then
                 running <= '0';
-                btn_prev <= '0';
-            else
-                btn_prev <= btn_start_stop_d;
-                
-                -- Při každém stisku přepneme stav 
-                if (btn_start_stop_d = '1' and btn_prev = '0') then
-                    running <= not running;
-                end if;
+            -- Toggle state when the debounced pulse arrives
+            elsif btn_start_stop_d = '1' then
+                running <= not running;
             end if;
         end if;
     end process;
