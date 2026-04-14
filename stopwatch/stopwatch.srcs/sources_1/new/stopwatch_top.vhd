@@ -41,7 +41,7 @@ entity stopwatch_top is
            an : out STD_LOGIC_VECTOR (7 downto 0));
 end stopwatch_top;
 
-architecture Behavioral of stopwatch_top is
+architecture Structural of stopwatch_top is
 
     -- internal signals
     signal sig_btn_rst_press : STD_LOGIC;
@@ -57,11 +57,12 @@ begin
 
     clk_en_100hz_inst : entity work.clk_en
         generic map (
-            G_MAX => 1_000_000, -- assuming 1MHz input clock
+            -- G_MAX => 5 -- for simulation
+            G_MAX => 1_000_000, -- for implementation, 
         )
         port map (
             clk => clk,
-            rst => 0, -- no reset for clock divider
+            rst => '0', -- no reset for clock divider
             ce_out => sig_ce_100hz
         );
 
@@ -70,7 +71,7 @@ begin
     debouncer_rst : entity work.debounce
         port map (
             clk => clk,
-            rst => 0, -- no reset for debouncer
+            rst => '0', -- no reset for debouncer
             btn_in => btn_rst,
             btn_state => open, -- not used
             btn_press => sig_btn_rst_press
@@ -79,7 +80,7 @@ begin
     debouncer_start_stop : entity work.debounce
         port map (
             clk => clk,
-            rst => 0, -- no reset for debouncer
+            rst => '0', -- no reset for debouncer
             btn_in => btn_start_stop,
             btn_state => open, -- not used
             btn_press => sig_btn_start_stop_press
@@ -88,7 +89,7 @@ begin
     debouncer_lap : entity work.debounce
         port map (
             clk => clk,
-            rst => 0, -- no reset for debouncer
+            rst => '0', -- no reset for debouncer
             btn_in => btn_lap,
             btn_state => open, -- not used
             btn_press => sig_btn_lap_press
@@ -99,11 +100,9 @@ begin
         port map (
             clk => clk,
             rst => sig_btn_rst_press,
-
+            ce_100hz => sig_ce_100hz,
             start_stop => sig_btn_start_stop_press,
             lap => sig_btn_lap_press,
-            ce_100hz => sig_ce_100hz,
-
             display_data => sig_display_data
         );
 
@@ -112,12 +111,11 @@ begin
         port map (
             clk => clk,
             rst => sig_btn_rst_press,
-
-            display_data => sig_display_data,
-            seg => seg,
-            dp => dp,
-            an => an
+            data_i => sig_display_data,
+            seg_o => seg,
+            dp_o => dp,
+            an_o => an
         );
 
 
-end Behavioral;
+end Structural;
