@@ -4,7 +4,7 @@ Tento projekt implementuje digitální stopky na desku Nexys A7-50T v jazyce VHD
 
 # Hlavní funkce
 **Start a Stop:** spuštění nebo pozastavení měření času.
-**Lap (mezičas):** zmrazení aktuálního času na displeji. Pokud je funkce Lap aktivování, svítí na levém krajním displeji písmeno "L". Vnitřní čítač stále běží a čítá dále.
+**Lap (mezičas):** zmrazení aktuálního času na displeji. Pokud je funkce Lap aktivování, svítí na levém krajním displeji písmeno `L`. Vnitřní čítač stále běží a čítá dále.
 **Reset:** Vynulování stopek.
 
 ---
