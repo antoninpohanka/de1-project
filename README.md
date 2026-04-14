@@ -82,11 +82,12 @@ Tento modul slouží jako black box pro 4 menší logické bloky, které řídí
 
 ## Simulace
 
-<img width="2385" height="819" alt="Screenshot 2026-04-14 163946" src="https://github.com/user-attachments/assets/3b5382b4-f132-446e-bcf9-d59b15745b6a" />
+<img width="2277" height="687" alt="Screenshot 2026-04-14 165239" src="https://github.com/user-attachments/assets/23487482-a464-45fa-a5c4-43a714d33b23" />
+
 
 **Popis simulace:**
 1. Počáteční reset vynuluje všechny registry.
-2. Stisk `btn_start_stop` spustí hlavní čítač, čas začíná plynule narůstat (viditelné na signálu `sig_time_24b`).
-3. Stisk `btn_lap` aktivuje režim mezičasu. Na výstupu pro displej se čas zastaví na hodnotě `000104` (viditelné na `sig_lap_24b`), ale vnitřní čítač běží dál.
+2. Stisk `btn_start_stop` spustí hlavní čítač, čas začíná plynule narůstat (viditelné na signálu `time_24b`).
+3. Stisk `btn_lap` aktivuje režim mezičasu. Na výstupu pro displej se čas zastaví na hodnotě `000104` (viditelné na `lap_24b`), ale vnitřní čítač běží dál.
 4. Následující stisk `btn_lap` vrátí na displej opět aktuálně běžící čas.
-5. Opětovný stisk `btn_start_stop` stopky zcela zastaví.
+5. Opětovný stisk `btn_start_stop` stopky zcela zastaví (to už se do obrázku nevešlo).
