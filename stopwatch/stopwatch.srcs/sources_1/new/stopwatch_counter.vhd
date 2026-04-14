@@ -13,7 +13,7 @@ entity stopwatch_counter is
 end stopwatch_counter;
 
 architecture Behavioral of stopwatch_counter is
-    -- Vytvoříme si signály pro jednotlivé číslice 
+    -- Signals for individual BCD digits
     signal centisec_0 : unsigned(3 downto 0) := (others => '0');
     signal centisec_1 : unsigned(3 downto 0) := (others => '0');
     signal sec_0      : unsigned(3 downto 0) := (others => '0');
@@ -25,7 +25,7 @@ begin
     begin
         if rising_edge(clk) then
             if btn_rst_d = '1' then
-                -- Reset všech čítačů
+                -- Reset all counters to zero
                 centisec_0 <= (others => '0');
                 centisec_1 <= (others => '0');
                 sec_0      <= (others => '0');
@@ -42,11 +42,11 @@ begin
                         centisec_1 <= (others => '0');
                         if sec_0 = 9 then
                             sec_0 <= (others => '0');
-                            if sec_1 = 5 then -- Desítky vteřin jdou jen do 5 (59s max)
+                            if sec_1 = 5 then -- Tens of seconds go only up to 5 (59 s)
                                 sec_1 <= (others => '0');
                                 if min_0 = 9 then
                                     min_0 <= (others => '0');
-                                    if min_1 = 5 then -- Desítky minut jdou jen do 5
+                                    if min_1 = 5 then -- Tens of minutes go only up to 5 (59 min)
                                         min_1 <= (others => '0');
                                     else
                                         min_1 <= min_1 + 1;
@@ -70,12 +70,12 @@ begin
         end if;
     end process;
 
-    -- Složení 24bitového vektoru 
-    time_24b(23 downto 20) <= std_logic_vector(min_1);      -- Desítky minut
-    time_24b(19 downto 16) <= std_logic_vector(min_0);      -- Jednotky minut
-    time_24b(15 downto 12) <= std_logic_vector(sec_1);      -- Desítky vteřin
-    time_24b(11 downto  8) <= std_logic_vector(sec_0);      -- Jednotky vteřin
-    time_24b( 7 downto  4) <= std_logic_vector(centisec_1); -- Desítky setin
-    time_24b( 3 downto  0) <= std_logic_vector(centisec_0); -- Jednotky setin
+    -- Combine the 6 BCD digits into a single 24-bit vector for display output
+    time_24b(23 downto 20) <= std_logic_vector(min_1);      -- Tens of minutes
+    time_24b(19 downto 16) <= std_logic_vector(min_0);      -- Units of minutes
+    time_24b(15 downto 12) <= std_logic_vector(sec_1);      -- Tens of seconds
+    time_24b(11 downto  8) <= std_logic_vector(sec_0);      -- Units of seconds
+    time_24b( 7 downto  4) <= std_logic_vector(centisec_1); -- Tens of centiseconds
+    time_24b( 3 downto  0) <= std_logic_vector(centisec_0); -- Units of centiseconds
 
 end Behavioral;
