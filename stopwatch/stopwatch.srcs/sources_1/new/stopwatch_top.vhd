@@ -57,13 +57,13 @@ begin
 
     clk_en_100hz_inst : entity work.clk_en
         generic map (
-            -- G_MAX => 5 -- for simulation
-            G_MAX => 1_000_000, -- for implementation, 
+            G_MAX => 5 -- for simulation
+            -- G_MAX => 1_000_000 -- for implementation, 
         )
         port map (
             clk => clk,
             rst => '0', -- no reset for clock divider
-            ce_out => sig_ce_100hz
+            ce => sig_ce_100hz
         );
 
     -- instance 2, 3, 4: button debouncers for reset, start/stop, and lap buttons
@@ -99,10 +99,10 @@ begin
     stopwatch_core_inst : entity work.stopwatch_logic
         port map (
             clk => clk,
-            rst => sig_btn_rst_press,
+            btn_rst_d => sig_btn_rst_press,
             ce_100hz => sig_ce_100hz,
-            start_stop => sig_btn_start_stop_press,
-            lap => sig_btn_lap_press,
+            btn_start_stop_d => sig_btn_start_stop_press,
+            btn_lap_d => sig_btn_lap_press,
             display_data => sig_display_data
         );
 
