@@ -19,15 +19,15 @@ Tento projekt implementuje digitální stopky na desku Nexys A7-50T v jazyce VHD
 # Harmonogram
 1. **týden**
   - blokové schéma logiky projektu, vytvoření github stránky
-&nbsp;
+<br>
     
 2. **týden**
   - vývoj jednotlivých bloků, simulace v programu Vivado
-&nbsp;
+<br>
     
 3. **týden**
   - spojení modulů do finálního celku, první testování programu na hardware
-&nbsp;
+<br>
     
 4. **týden**
   - funkční výrobek, optimalizace, debug; github dokumentace
@@ -35,14 +35,19 @@ Tento projekt implementuje digitální stopky na desku Nexys A7-50T v jazyce VHD
     
 5. **týden**
   - dokončení, prezentační video a plakát funkčního zařízení
-&nbsp;
 
 ---
 
 # Blokové schéma projektu
 
+
+### Schéma z pohledu stopwatch_top
 ![de1_2 drawio](stopwatch_top.png)
+
 <br>
+<br>
+
+### Vnitřní logické schéma stopwatch_logic
 ![Stopwatch_logic](stopwatch_logic.png)
 <?xml version="1.0" encoding="UTF-8"?>
 
@@ -80,7 +85,7 @@ Tento modul slouží jako black box pro 4 menší logické bloky, které řídí
 <img width="2385" height="819" alt="Screenshot 2026-04-14 163946" src="https://github.com/user-attachments/assets/3b5382b4-f132-446e-bcf9-d59b15745b6a" />
 
 **Popis simulace:**
-1. Počáteční Reset vynuluje všechny registry.
+1. Počáteční reset vynuluje všechny registry.
 2. Stisk `btn_start_stop` spustí hlavní čítač, čas začíná plynule narůstat (viditelné na signálu `sig_time_24b`).
 3. Stisk `btn_lap` aktivuje režim mezičasu. Na výstupu pro displej se čas zastaví na hodnotě `000104` (viditelné na `sig_lap_24b`), ale vnitřní čítač běží dál.
 4. Následující stisk `btn_lap` vrátí na displej opět aktuálně běžící čas.
