@@ -49,7 +49,7 @@ architecture Structural of stopwatch_top is
     signal sig_btn_lap_press : STD_LOGIC;
 
     signal sig_ce_100hz : STD_LOGIC;
-    signal sig_display_data : STD_LOGIC_VECTOR(23 downto 0); -- 6 digits * 4 bits per digit
+    signal sig_display_data : STD_LOGIC_VECTOR(31 downto 0); -- 6 digits * 4 bits per digit
 
 begin
 

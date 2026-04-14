@@ -1,6 +1,8 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
+-- recognizes the start/stop button press and holds the state of whether the stopwatch is running or not
+
 entity start_stop_latch is
     Port (
         clk              : in  STD_LOGIC;
