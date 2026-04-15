@@ -5,6 +5,8 @@
 *.runs/
 *.ip_user_files/
 .Xil/
+*.wcfg
+*.xsa
 
 # Logs
 *.log
@@ -16,3 +18,5 @@
 # Generated bit files
 *.bit
 *.bin
+
+.vscode/
