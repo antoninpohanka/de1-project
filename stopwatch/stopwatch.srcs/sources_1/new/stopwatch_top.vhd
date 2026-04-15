@@ -63,34 +63,34 @@ begin
         port map (
             clk => clk,
             rst => '0', -- no reset for clock divider
-            ce => sig_ce_100hz
+            ce  => sig_ce_100hz
         );
 
     -- instance 2, 3, 4: button debouncers for reset, start/stop, and lap buttons
 
     debouncer_rst : entity work.debounce
         port map (
-            clk => clk,
-            rst => '0', -- no reset for debouncer
-            btn_in => btn_rst,
+            clk       => clk,
+            rst       => '0', -- no reset for debouncer
+            btn_in    => btn_rst,
             btn_state => open, -- not used
             btn_press => sig_btn_rst_press
         );
 
     debouncer_start_stop : entity work.debounce
         port map (
-            clk => clk,
-            rst => '0', -- no reset for debouncer
-            btn_in => btn_start_stop,
+            clk       => clk,
+            rst       => '0', -- no reset for debouncer
+            btn_in    => btn_start_stop,
             btn_state => open, -- not used
             btn_press => sig_btn_start_stop_press
         );
 
     debouncer_lap : entity work.debounce
         port map (
-            clk => clk,
-            rst => '0', -- no reset for debouncer
-            btn_in => btn_lap,
+            clk       => clk,
+            rst       => '0', -- no reset for debouncer
+            btn_in    => btn_lap,
             btn_state => open, -- not used
             btn_press => sig_btn_lap_press
         );
@@ -98,23 +98,23 @@ begin
     -- instance 5: stopwatch control logic
     stopwatch_core_inst : entity work.stopwatch_logic
         port map (
-            clk => clk,
-            btn_rst_d => sig_btn_rst_press,
-            ce_100hz => sig_ce_100hz,
+            clk              => clk,
+            btn_rst_d        => sig_btn_rst_press,
+            ce_100hz         => sig_ce_100hz,
             btn_start_stop_d => sig_btn_start_stop_press,
-            btn_lap_d => sig_btn_lap_press,
-            display_data => sig_display_data
+            btn_lap_d        => sig_btn_lap_press,
+            display_data     => sig_display_data
         );
 
     -- instance 6: display driver to convert display data to 7-seg signals
     display_driver_inst : entity work.display_driver
         port map (
-            clk => clk,
-            rst => sig_btn_rst_press,
+            clk    => clk,
+            rst    => sig_btn_rst_press,
             data_i => sig_display_data,
-            seg_o => seg,
-            dp_o => dp,
-            an_o => an
+            seg_o  => seg,
+            dp_o   => dp,
+            an_o   => an
         );
 
 

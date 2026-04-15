@@ -37,7 +37,7 @@ entity clk_en is
     );
     Port ( clk : in STD_LOGIC;
            rst : in STD_LOGIC;
-           ce : out STD_LOGIC);
+           ce  : out STD_LOGIC);
 end clk_en;
 
 architecture Behavioral of clk_en is
