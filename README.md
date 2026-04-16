@@ -42,14 +42,14 @@ Tento projekt implementuje digitální stopky na desku Nexys A7-50T v jazyce VHD
 
 
 ### Schéma z pohledu stopwatch_top
-![de1_2 drawio](images/stopwatch_top.png)
+![de1_2 drawio](images/stopwatch_top.svg)
 ### Časový diagram pro stopwatch_top
 ![Time_diagramLogic](images/wave_top1.svg)
 <br>
 <br>
 
 ### Vnitřní logické schéma stopwatch_logic
-![Stopwatch_logic](images/stopwatch_logic.png)
+![Stopwatch_logic](images/stopwatch_logic.svg)
 ### Časový diagram pro stopwatch_logic
 ![Time_diagramLogic](images/wave_logic1.svg)
 <?xml version="1.0" encoding="UTF-8"?>
