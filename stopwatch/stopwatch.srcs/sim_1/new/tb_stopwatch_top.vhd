@@ -59,9 +59,27 @@ begin
         btn_start_stop <= '0';
 
         -- Let the stopwatch run for a while
-        wait for 5000 ns;
+        wait for 3000 ns;
 
-        -- 3. Capture split time (Enter LAP mode)
+        -- 3. PAUSE the stopwatch
+        -- Pressing the start/stop button again to pause counting
+        btn_start_stop <= '1';
+        wait for 200 ns;
+        btn_start_stop <= '0';
+
+        -- Observe in the waveform that the counter has stopped
+        wait for 2000 ns;
+
+        -- 4. RESUME the stopwatch
+        -- Pressing the start/stop button to resume counting
+        btn_start_stop <= '1';
+        wait for 200 ns;
+        btn_start_stop <= '0';
+
+        -- Let it run for a while before testing the lap function
+        wait for 3000 ns;
+
+        -- 5. Capture split time (Enter LAP mode)
         btn_lap <= '1';
         wait for 200 ns;
         btn_lap <= '0';
@@ -71,7 +89,7 @@ begin
         -- while internal background counters continue to increment.
         wait for 3000 ns;
 
-        -- 4. Resume normal view (Exit LAP mode)
+        -- 6. Resume normal view (Exit LAP mode)
         btn_lap <= '1';
         wait for 200 ns;
         btn_lap <= '0';
@@ -79,7 +97,7 @@ begin
         -- Let the running time display for a while
         wait for 3000 ns;
 
-        -- 5. Stop the stopwatch completely
+        -- 7. Stop the stopwatch completely
         btn_start_stop <= '1';
         wait for 200 ns;
         btn_start_stop <= '0';
