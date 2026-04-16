@@ -18,5 +18,6 @@
 # Generated bit files
 *.bit
 *.bin
+*.dcp
 
 .vscode/
