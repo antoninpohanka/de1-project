@@ -57,8 +57,8 @@ begin
 
     clk_en_100hz_inst : entity work.clk_en
         generic map (
-            G_MAX => 5 -- for simulation
-            -- G_MAX => 1_000_000 -- for implementation, 
+            -- G_MAX => 5 -- for simulation
+            G_MAX => 1_000_000 -- for implementation, 
         )
         port map (
             clk => clk,
