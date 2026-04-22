@@ -38,7 +38,12 @@ entity stopwatch_top is
            btn_lap : in STD_LOGIC;
            seg : out STD_LOGIC_VECTOR (6 downto 0);
            dp : out STD_LOGIC;
-           an : out STD_LOGIC_VECTOR (7 downto 0));
+           an : out STD_LOGIC_VECTOR (7 downto 0);
+           
+           led_r : out STD_LOGIC;
+           led_g : out STD_LOGIC;
+           led_b : out STD_LOGIC
+           );
 end stopwatch_top;
 
 architecture Structural of stopwatch_top is
@@ -51,6 +56,8 @@ architecture Structural of stopwatch_top is
     signal sig_ce_100hz : STD_LOGIC;
     signal sig_display_data : STD_LOGIC_VECTOR(31 downto 0); -- 6 digits * 4 bits per digit
 
+    signal sig_run_status : STD_LOGIC;
+    signal sig_lap_status : STD_LOGIC;
 begin
 
     -- insance 1: clock divider to generate 100Hz enable signal
@@ -103,7 +110,10 @@ begin
             ce_100hz         => sig_ce_100hz,
             btn_start_stop_d => sig_btn_start_stop_press,
             btn_lap_d        => sig_btn_lap_press,
-            display_data     => sig_display_data
+            display_data     => sig_display_data,
+
+            run_status => sig_run_status,
+            lap_status => sig_lap_status
         );
 
     -- instance 6: display driver to convert display data to 7-seg signals
@@ -116,6 +126,15 @@ begin
             dp_o   => dp,
             an_o   => an
         );
+
+    -- RED: when stopwatch not running (run_status = 0)
+    led_r <= '1' when sig_run_status = '0' else '0';
+    
+    -- GREEN: running and not in LAP
+    led_g <= '1' when (sig_run_status = '1' and sig_lap_status = '0') else '0';
+    
+    -- BLUE: running and in LAP at the same time
+    led_b <= '1' when (sig_run_status = '1' and sig_lap_status = '1') else '0';
 
 
 end Structural;

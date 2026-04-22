@@ -10,7 +10,11 @@ entity stopwatch_logic is
         btn_lap_d        : in  STD_LOGIC;
         
         -- Full 32-bit output for 8 displays (including 'L' character)
-        display_data     : out STD_LOGIC_VECTOR (31 downto 0)
+        display_data     : out STD_LOGIC_VECTOR (31 downto 0);
+
+        -- New outputs for RGB LEDs
+        run_status       : out STD_LOGIC;
+        lap_status       : out STD_LOGIC
     );
 end stopwatch_logic;
 
@@ -65,6 +69,10 @@ begin
             time_24b      => sig_time_24b,          
             lap_24b       => sig_lap_24b            
         );
+
+    -- output states out of this module
+    run_status <= sig_run_enable;
+    lap_status <= sig_lap_mode;
 
     -- DATA FORMATTING FOR DISPLAY DRIVER (32 bits)
     -- AN7 (Leftmost) : Show 'L' (x"B") if in lap mode, else blank (x"A")
