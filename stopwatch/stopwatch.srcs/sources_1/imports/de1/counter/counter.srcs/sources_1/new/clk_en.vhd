@@ -1,20 +1,21 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company:      Brno University of Technology
+-- Engineer:     Antonin Pohanka
 -- 
--- Create Date: 03/05/2026 10:22:20 AM
--- Design Name: 
--- Module Name: clk_en - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
+-- Create Date:  03/05/2026 10:22:20 AM
+-- Design Name:  Stopwatch with Lap Time Function
+-- Module Name:  clk_en - Behavioral
+-- Project Name: Digital Electronics 1 Project - Stopwatch
+-- Target Devices: Nexys A7-50T (Artix-7)
+-- Tool Versions: Vivado 2020.1 (or newer)
+-- Description:  Generates a single clock-cycle enable pulse at a frequency 
+--               determined by the generic parameter G_MAX. Used to derive 
+--               slower enable signals (e.g., 100 Hz for the stopwatch) 
+--               from the main system clock.
 -- 
 -- Revision:
 -- Revision 0.01 - File Created
--- Additional Comments:
+-- Additional Comments: Project for DE1 course at FEEC BUT.
 -- 
 ----------------------------------------------------------------------------------
 
