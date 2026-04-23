@@ -126,3 +126,6 @@ set_property -dict { PACKAGE_PIN R12 IOSTANDARD LVCMOS33 } [get_ports {led_b}];
 # # set_property IOSTANDARD LVCMOS33 [get_ports {...}]
 #
 # -----------------------------------------------
+
+set_property CFGBVS VCCO [current_design]
+set_property CONFIG_VOLTAGE 3.3 [current_design]
