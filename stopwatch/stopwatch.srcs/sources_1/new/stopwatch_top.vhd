@@ -134,8 +134,8 @@ begin
     led_g <= '1' when (sig_run_status = '1' and sig_lap_status = '0') else '0';
     
     -- BLUE: stays on when in LAP mode
-    led_b <= '1' when sig_run_status = '1' else '0';
-    -- led_b <= '1' when (sig_run_status = '1' and sig_lap_status = '1') else '0'; -- backup if mixing wasnt functional
+    led_b <= '1' when (sig_run_status = '1' and sig_lap_status = '1') else '0';
+   
 
 
 end Structural;
