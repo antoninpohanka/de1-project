@@ -1,3 +1,26 @@
+----------------------------------------------------------------------------------
+-- Company:      Brno University of Technology
+-- Engineer:     Lukas Kosek
+-- 
+-- Create Date:  04/09/2026 08:22:45 AM
+-- Design Name:  Stopwatch with Lap Time Function
+-- Module Name:  stopwatch_logic 
+-- Project Name: Digital Electronics 1 Project - Stopwatch
+-- Target Devices: Nexys A7-50T (Artix-7)
+-- Tool Versions: Vivado 2020.1 (or newer)
+-- Description:  Structural logic module connecting the start/stop latch, 
+--               time counter, lap controller, and lap memory. It manages 
+--               the internal signals and formats the 32-bit output for the 
+--               8-digit 7-segment display driver, including lap mode indication.
+-- 
+-- Dependencies: start_stop_latch.vhd, stopwatch_counter.vhd, 
+--               lap_run_latch.vhd, lap_register.vhd
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments: Project for DE1 course at FEEC BUT.
+-- 
+----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
