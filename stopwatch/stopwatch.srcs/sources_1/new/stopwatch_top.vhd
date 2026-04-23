@@ -12,8 +12,6 @@
 --               Features: start/stop/reset, lap time measurement, 
 --               and display on 7-segment LED.
 -- 
--- Dependencies: clock_enable.vhd, cnt_up_down.vhd, hex_7seg.vhd, 
---               driver_7seg_4digits.vhd (or similar based on your structure)
 -- 
 -- Revision:
 -- Revision 0.01 - File Created
