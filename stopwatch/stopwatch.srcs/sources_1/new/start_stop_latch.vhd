@@ -11,8 +11,6 @@
 -- Description:  Recognizes the start/stop button press and holds the state 
 --               of whether the stopwatch is currently running or paused.
 -- 
--- Dependencies: None
--- 
 -- Revision:
 -- Revision 0.01 - File Created
 -- Additional Comments: Project for DE1 course at FEEC BUT.
