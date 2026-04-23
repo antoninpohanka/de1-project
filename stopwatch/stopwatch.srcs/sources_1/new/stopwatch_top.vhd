@@ -1,20 +1,23 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company:      Brno University of Technology
+-- Engineer:     Antonin Pohanka
 -- 
--- Create Date: 04/09/2026 08:22:45 AM
--- Design Name: 
--- Module Name: stopwatch_top - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
+-- Create Date:  04/09/2026 08:22:45 AM
+-- Design Name:  Stopwatch with Lap Time Function
+-- Module Name:  stopwatch_top - Behavioral
+-- Project Name: Digital Electronics 1 Project - Stopwatch
+-- Target Devices: Nexys A7-50T (Artix-7)
+-- Tool Versions: Vivado 2020.1 (or newer)
+-- Description:  Top-level entity for digital stopwatches. 
+--               Features: start/stop/reset, lap time measurement, 
+--               and display on 7-segment LED.
 -- 
--- Dependencies: 
+-- Dependencies: clock_enable.vhd, cnt_up_down.vhd, hex_7seg.vhd, 
+--               driver_7seg_4digits.vhd (or similar based on your structure)
 -- 
 -- Revision:
 -- Revision 0.01 - File Created
--- Additional Comments:
+-- Additional Comments: Project for DE1 course at FEEC BUT.
 -- 
 ----------------------------------------------------------------------------------
 
