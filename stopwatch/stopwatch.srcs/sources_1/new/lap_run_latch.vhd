@@ -1,3 +1,23 @@
+----------------------------------------------------------------------------------
+-- Company:      Brno University of Technology
+-- Engineer:     Antonin Pohanka
+-- 
+-- Create Date:  04/09/2026 08:22:45 AM
+-- Design Name:  Stopwatch with Lap Time Function
+-- Module Name:  lap_run_latch - Behavioral
+-- Project Name: Digital Electronics 1 Project - Stopwatch
+-- Target Devices: Nexys A7-50T (Artix-7)
+-- Tool Versions: Vivado 2020.1 (or newer)
+-- Description:  Controller module that toggles lap mode on a button press. 
+--               It acts as a multiplexer, routing either the continuously 
+--               running time or the frozen lap time to the display output, 
+--               and sets a flag to indicate the active lap mode.
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments: Project for DE1 course at FEEC BUT.
+-- 
+----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
