@@ -17,6 +17,10 @@ Tento projekt implementuje digitální stopky na desku Nexys A7-50T v jazyce VHD
 * `zelená`: stopky normálně běží
 * `modrá`: aktivován režim LAP a čítání na pozadí stále běží
 
+### Demonstrační video
+
+Odkaz na [video](https://youtu.be/Tqopd7HhJq0?si=zQrQvsoatiU6HVuE) na youtube předvádějící funkční program na desce Nexys A7-50T.
+
 
 ---
 
